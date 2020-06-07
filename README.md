@@ -1,2 +1,2 @@
-## ![data-pipeline-arch-logo](misc/Data-Pipe-Arch-Logo.png)
+## ![data-pipeline-arch-logo](misc/Data-Pipe-Archi-Logo.png)
 Data pipeline poc
