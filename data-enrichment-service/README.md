@@ -20,7 +20,7 @@ Swagger Documentation : http://localhost:8085/swagger-ui.html
                "Accept-Charset":"UTF-8"
 ```
 ### Architecture flow for data-enrichment-service
-## ![data-enrichment-service-logo](misc/Data-Pipeline-Arch.png)
+## ![data-enrichment-service-logo](misc/Data-Pipeline-Arch-Enrich.png)
 
 ### Jar file execution option 2 run application
  - Open command line prompt

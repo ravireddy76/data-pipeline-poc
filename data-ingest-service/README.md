@@ -4,7 +4,7 @@ This is data-ingest-service is micro service application to compute kafka messag
 
 ### Getting Started
 To set up, build and run poc application in LOCAL environment.
-1.	Clone or download from github (https://github.com/ravireddy76/docker-compose)
+1.	Clone or download from github (https://github.com/ravireddy76/data-pipeline-poc)
 2.	Open Project data-ingest-service in IntelliJ/Eclipse
 3.  For lombok plugin configuration please follow steps https://www.baeldung.com/lombok-ide
 3.	Build ``` ./gradlew clean build ```
@@ -21,7 +21,7 @@ Swagger Documentation : http://localhost:8085/swagger-ui.html
                "Accept-Charset":"UTF-8"
 ```
 ### Architecture flow for data-ingest-service
-## ![data-ingest-service-logo](misc/Data-Pipeline-Arch.png)
+## ![data-ingest-service-logo](misc/Data-Pipeline-Arch-Ingest.png)
 
 ### Jar file execution option 2 run application
  - Open command line prompt

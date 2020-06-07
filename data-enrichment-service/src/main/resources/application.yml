@@ -48,23 +48,17 @@ spring:
       database: postgresql
       database-platform: org.hibernate.dialect.PostgreSQLDialect
 
-  # MongoDB configuration
-#  data:
-#    mongodb:
-#      database: claims-db
-#      port: 27017
-#      host: localhost
 
   # Kafka Configuration
-#  kafka:
-#    bootstrap-servers: localhost:9092
-#    consumer:
-#      group-id: mbr_claim_process
-#      auto-offset-reset: earliest
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: mbr_claims
+      auto-offset-reset: earliest
 
 # Kafka topic configuration where listening from topic
-#topic:
-#  name: mbr_claim_topic
+topic:
+  name: data-enrichment
 
 # use a HTTP port 8080
 server:
