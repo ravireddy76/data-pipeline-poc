@@ -9,10 +9,10 @@ Data pipeline technology is especially helpful for
 4. Store data in the cloud.
 
 #### Techniques and Implementation
-Micro services architecture patterns (Micro services should be defined based on business process and scalable independently)
-Kafka Streaming (For event and async communication between the micro services)
-RDBMS for transactional data, NoSQL for non transactional data
-Monitoring
+1. Micro services architecture patterns (Micro services should be defined based on business process and scalable independently)
+2. Kafka Streaming (For event and async communication between the micro services)
+3. RDBMS for transactional data, NoSQL for non transactional data
+4. Monitoring
 
 #### Technologies
 1. SpringBoot(Micro Services)
