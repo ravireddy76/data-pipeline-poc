@@ -12,11 +12,11 @@ To set up, build and run poc application in LOCAL environment.
     OR using gradle command  ``` ./gradlew bootRun ```
 
 ### Endpoint Information
-Swagger Documentation : http://localhost:8085/swagger-ui.html
+Swagger Documentation : http://localhost:8086/swagger-ui.html
 - Health Check:
 ```
- create data points and clusters :
-    GET -> http://localhost:8085/dataingest/heartbeat
+ create data points for data ingest :
+    GET -> http://localhost:8086/dataingest/heartbeat
     Headers -> "Content-Type":"application/json"
                "Accept-Charset":"UTF-8"
 ```
@@ -28,13 +28,13 @@ Swagger Documentation : http://localhost:8085/swagger-ui.html
  - Go to (cd to) project folder
  - Go to build/libs directory
  - execute command  ``` java -jar data-ingest-service.jar ```
- - http://localhost:8085/swagger-ui.html
+ - http://localhost:8086/swagger-ui.html
 
 ### Docker Option 2 run application
  - To build docker image from docker file
    ``` docker build -t data-ingest-service .```
- - To run created docker image  ``` docker run -p 8085:8085 -t data-ingest-service ```
- - http://localhost:8085/swagger-ui.html
+ - To run created docker image  ``` docker run -p 8086:8086 -t data-ingest-service ```
+ - http://localhost:8086/swagger-ui.html
 
 ### Contribute
 Ravi Reddy (Ravinder Nancherla)

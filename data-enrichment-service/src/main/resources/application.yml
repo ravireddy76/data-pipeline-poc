@@ -35,7 +35,7 @@ spring:
   #Postgres dB configuration.
   datasource:
     platform: postgres
-    url: "jdbc:postgresql://localhost:5432/DataPipeline"
+    url: "jdbc:postgresql://localhost:5432/datapipeline"
     username: test
     password: test9988
     driver-class-name: org.postgresql.Driver
@@ -47,6 +47,9 @@ spring:
       show-sql: true
       database: postgresql
       database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 
   # Kafka Configuration

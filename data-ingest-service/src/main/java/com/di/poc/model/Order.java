@@ -2,8 +2,8 @@ package com.di.poc.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Nationalized;
 
-import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -27,56 +27,69 @@ public class Order {
     @Column(name = "id")
     private long id;
 
+    @Nationalized
     @Column(name = "aa")
-    private Object aa;
+    private String aa;
 
+    @Nationalized
     @Column(name = "appontmentReminder")
-    private Object appontmentReminder;
+    private String appontmentReminder;
 
+    @Nationalized
     @Column(name = "cognitiveStatus")
-    private Object cognitiveStatus;
+    private String cognitiveStatus;
 
     @Column(name = "company_id")
     private int companyId;
 
+    @Nationalized
     @Column(name = "cpt_codes")
-    private Object cptCodes;
+    private String cptCodes;
 
+    @Nationalized
     @Column(name = "createdby")
-    private Object createdby;
+    private String createdby;
 
+    @Nationalized
     @Column(name = "currentDate")
-    private Object currentDate;
+    private String currentDate;
 
     @Column(name = "deleted_dt")
     private Timestamp deletedDt;
 
+    @Nationalized
     @Column(name = "dischargeInstructions")
-    private Object dischargeInstructions;
+    private String dischargeInstructions;
 
+    @Nationalized
     @Column(name = "dispatch_address")
-    private Object dispatchAddress;
+    private String dispatchAddress;
 
+    @Nationalized
     @Column(name = "dispatch_contact_name")
-    private Object dispatchContactName;
+    private String dispatchContactName;
 
+    @Nationalized
     @Column(name = "dispatch_contact_number")
-    private Object dispatchContactNumber;
+    private String dispatchContactNumber;
 
     @Column(name = "duration")
     private int duration;
 
+    @Nationalized
     @Column(name = "emp")
-    private Object emp;
+    private String emp;
 
     @Column(name = "facility_id")
     private int facilityId;
 
+    @Nationalized
     @Column(name = "functionalStatus")
-    private Object functionalStatus;
+    private String functionalStatus;
 
+    @Nationalized
     @Column(name = "google_job_id")
-    private Object googleJobId;
+    private String googleJobId;
 
     @Column(name = "has_approved")
     private boolean hasApproved;
@@ -84,11 +97,13 @@ public class Order {
     @Column(name = "has_rescheduled")
     private boolean hasRescheduled;
 
+    @Nationalized
     @Column(name = "history_info")
-    private Object historyInfo;
+    private String historyInfo;
 
+    @Nationalized
     @Column(name = "icd_codes")
-    private Object icdCodes;
+    private String icdCodes;
 
     @Column(name = "in_hold")
     private boolean inHold;
@@ -96,26 +111,33 @@ public class Order {
     @Column(name = "is_quick_appt")
     private boolean isQuickAppt;
 
+    @Nationalized
     @Column(name = "is_rejected")
-    private Object isRejected;
+    private String isRejected;
 
+    @Nationalized
     @Column(name = "isMedicationReconciliation")
-    private Object isMedicationReconciliation;
+    private String isMedicationReconciliation;
 
+    @Nationalized
     @Column(name = "isPreOrder")
-    private Object isPreOrder;
+    private String isPreOrder;
 
+    @Nationalized
     @Column(name = "isquickappt_from")
-    private Object isquickapptFrom;
+    private String isquickapptFrom;
 
+    @Nationalized
     @Column(name = "jos")
-    private Object jos;
+    private String jos;
 
+    @Nationalized
     @Column(name = "lastMuUpdatedBy")
-    private Object lastMuUpdatedBy;
+    private String lastMuUpdatedBy;
 
+    @Nationalized
     @Column(name = "linked_rad_orders")
-    private Object linkedRadOrders;
+    private String linkedRadOrders;
 
     @Column(name = "modality_id")
     private int modalityId;
@@ -129,23 +151,29 @@ public class Order {
     @Column(name = "mu_passed")
     private boolean muPassed;
 
+    @Nationalized
     @Column(name = "mu_validation_data")
-    private Object muValidationData;
+    private String muValidationData;
 
+    @Nationalized
     @Column(name = "oa")
-    private Object oa;
+    private String oa;
 
+    @Nationalized
     @Column(name = "order_guid")
-    private Object orderGuid;
+    private String orderGuid;
 
+    @Nationalized
     @Column(name = "order_source")
-    private Object orderSource;
+    private String orderSource;
 
+    @Nationalized
     @Column(name = "order_status")
-    private Object orderStatus;
+    private String orderStatus;
 
+    @Nationalized
     @Column(name = "order_status_desc")
-    private Object orderStatusDesc;
+    private String orderStatusDesc;
 
     @Column(name = "order_status_last_changed_by")
     private int orderStatusLastChangedBy;
@@ -153,11 +181,13 @@ public class Order {
     @Column(name = "order_status_last_changed_dt")
     private Timestamp orderStatusLastChangedDt;
 
+    @Nationalized
     @Column(name = "order_type")
-    private Object orderType;
+    private String orderType;
 
+    @Nationalized
     @Column(name = "orderContact")
-    private Object orderContact;
+    private String orderContact;
 
     @Column(name = "ordered_by")
     private int orderedBy;
@@ -165,44 +195,56 @@ public class Order {
     @Column(name = "ordered_dt")
     private Timestamp orderedDt;
 
+    @Nationalized
     @Column(name = "ordering_facility")
-    private Object orderingFacility;
+    private String orderingFacility;
 
+    @Nationalized
     @Column(name = "ordering_facility_id")
-    private Object orderingFacilityId;
+    private String orderingFacilityId;
 
+    @Nationalized
     @Column(name = "ordering_providers")
-    private Object orderingProviders;
+    private String orderingProviders;
 
+    @Nationalized
     @Column(name = "patient_age")
-    private Object patientAge;
+    private String patientAge;
 
     @Column(name = "patient_id")
     private long patientId;
 
+    @Nationalized
     @Column(name = "patientCondition")
-    private Object patientCondition;
+    private String patientCondition;
 
+    @Nationalized
     @Column(name = "patientEmail")
-    private Object patientEmail;
+    private String patientEmail;
 
+    @Nationalized
     @Column(name = "patientLocation")
-    private Object patientLocation;
+    private String patientLocation;
 
+    @Nationalized
     @Column(name = "patientRoom")
-    private Object patientRoom;
+    private String patientRoom;
 
+    @Nationalized
     @Column(name = "phy_order_status")
-    private Object phyOrderStatus;
+    private String phyOrderStatus;
 
+    @Nationalized
     @Column(name = "pos")
-    private Object pos;
+    private String pos;
 
+    @Nationalized
     @Column(name = "pos_map_code")
-    private Object posMapCode;
+    private String posMapCode;
 
+    @Nationalized
     @Column(name = "pos_type_code")
-    private Object posTypeCode;
+    private String posTypeCode;
 
     @Column(name = "primary_patient_insurance_id")
     private long primaryPatientInsuranceId;
@@ -210,26 +252,33 @@ public class Order {
     @Column(name = "provider_id")
     private int providerId;
 
+    @Nationalized
     @Column(name = "reading_providers")
-    private Object readingProviders;
+    private String readingProviders;
 
+    @Nationalized
     @Column(name = "referralNo")
-    private Object referralNo;
+    private String referralNo;
 
+    @Nationalized
     @Column(name = "referring_provider_ids")
-    private Object referringProviderIds;
+    private String referringProviderIds;
 
+    @Nationalized
     @Column(name = "referring_providerloginID")
-    private Object referring_providerloginID;
+    private String referring_providerloginID;
 
+    @Nationalized
     @Column(name = "referring_providers")
-    private Object referringProviders;
+    private String referringProviders;
 
+    @Nationalized
     @Column(name = "requestingDate")
-    private Object requestingDate;
+    private String requestingDate;
 
+    @Nationalized
     @Column(name = "scheduled_date")
-    private Object scheduledDate;
+    private String scheduledDate;
 
     @Column(name = "scheduled_dt")
     private Timestamp scheduledDt;
@@ -237,34 +286,40 @@ public class Order {
     @Column(name = "secondary_patient_insurance_id")
     private long secondaryPatientInsuranceId;
 
+    @Nationalized
     @Column(name = "source")
-    private Object source;
+    private String source;
 
+    @Nationalized
     @Column(name = "stat")
-    private Object stat;
+    private String stat;
 
     @Column(name = "technologist_id")
     private int technologistId;
 
+    @Nationalized
     @Column(name = "technologist_name")
-    private Object technologistName;
+    private String technologistName;
 
     @Column(name = "tertiary_patient_insurance_id")
     private long tertiaryPatientInsuranceId;
 
+    @Nationalized
     @Column(name = "transactionCareIn")
-    private Object transactionCareIn;
+    private String transactionCareIn;
 
+    @Nationalized
     @Column(name = "transport")
-    private Object transport;
+    private String transport;
 
     @Column(name = "vehicle_id")
     private int vehicleId;
 
+    @Nationalized
     @Column(name = "vehicle_name")
-    private Object vehicleName;
+    private String vehicleName;
 
     @Column(name = "visit_no")
-    private Object visitNo;
+    private String visitNo;
 
 }
