@@ -63,8 +63,9 @@ public class HeartBeatController {
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "", notes = "Reading and publishing order data events")
     @RequestMapping(value = "/publish", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity publishEvent() {
+    public ResponseEntity publishEvent(@RequestBody Map<String, String> request) {
         try {
+            log.info("Request info: {}", request.toString());
             log.info("Reading data and publishing data events into kafka topic");
             eventPublisher.readAndPublish();
             return new ResponseEntity(HttpStatus.OK);

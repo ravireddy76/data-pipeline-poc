@@ -266,7 +266,7 @@ public class Order {
 
     @Nationalized
     @Column(name = "referring_providerloginID")
-    private String referring_providerloginID;
+    private String referringProviderLoginID;
 
     @Nationalized
     @Column(name = "referring_providers")

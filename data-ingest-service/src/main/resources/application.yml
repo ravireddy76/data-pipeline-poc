@@ -38,7 +38,7 @@ spring:
     url: "jdbc:sqlserver://localhost;databaseName=pocingest"
     username: sa
     password: adminTest@20
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
   #JPA Configuration
   jpa:
@@ -46,10 +46,11 @@ spring:
       ddl-auto: update # When you launch the application for the first time - switch "none" at "create"
       show-sql: true
       database: mssqlserver
-      database-platform: org.hibernate.dialect.SQLServerDialect
+      database-platform: org.hibernate.dialect.SQLServer2012Dialect
+      naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.SQLServerDialect
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
 
 
 
@@ -57,12 +58,12 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-      group-id: mbr_claims
+      group-id: data_orders
       auto-offset-reset: earliest
 
 # Kafka topic configuration where listening from topic
 topic:
-  name: data-enrichment
+  ordert: orders
 
 
 # use a HTTP port 8080

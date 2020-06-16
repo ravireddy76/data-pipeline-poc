@@ -1,0 +1,174 @@
+{
+  "id": 259,
+  "companyId": 1,
+  "cptCodes": [],
+  "duration": 45,
+  "facilityId": 7,
+  "icdCodes": [],
+  "isQuickAppt": false,
+  "linkedRadOrders": [],
+  "modalityId": 5,
+  "modalityRoomId": 21,
+  "muValidationData": {
+    "patientPrescription": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientMedication": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientAllergies": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientProblems": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientName": {
+      "applied": true,
+      "user": "Weise, Todd",
+      "updated_date": "2020-05-13T14:51:07.932Z"
+    },
+    "patientDOB": {
+      "applied": true,
+      "user": "Weise, Todd",
+      "updated_date": "2020-05-13T14:51:07.932Z"
+    },
+    "patientRace": {
+      "applied": "true",
+      "user": "Weise,Todd",
+      "updated_date": "2020-05-13T14:51:07.964Z"
+    },
+    "patientEthnicity": {
+      "applied": "true",
+      "user": "Weise,Todd",
+      "updated_date": "2020-05-13T14:51:07.964Z"
+    },
+    "patientPreferredLanguage": {
+      "applied": "true",
+      "user": "Weise,Todd",
+      "updated_date": "2020-05-13T14:51:07.964Z"
+    },
+    "patientLaboratoryTest": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientLaboratoryResults": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientSmokingStatus": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientVitalSigns": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientImmunizations": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientCognitiveStatus": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "functional_status": {
+      "applied": false,
+      "user": "",
+      "updated_date": ""
+    },
+    "patientGender": {
+      "applied": true,
+      "user": "Weise, Todd",
+      "updated_date": "2020-05-13T14:51:07.932Z"
+    },
+    "patientEduMaterial": {
+      "applied": false,
+      "user": "",
+      "updated_date": "2020-05-13T14:51:07.932Z"
+    },
+    "Remainder": {
+      "applied": false,
+      "user": "",
+      "updated_date": "2020-05-13T14:51:07.932Z"
+    },
+    "patientSummaryOfCare": {
+      "applied": false,
+      "user": "",
+      "updated_date": "2020-05-13T14:51:07.932Z"
+    },
+    "patientSummaryOfCareElectronic": {
+      "applied": false,
+      "user": "",
+      "updated_date": "2020-05-13T14:51:07.932Z"
+    },
+    "patientElectronicAccessVDT": {
+      "applied": false,
+      "user": "",
+      "updated_date": "2020-05-13T14:51:07.932Z"
+    }
+  },
+  "orderInfo": {
+    "referralNo": "",
+    "dispatch_contact_name": "",
+    "dispatch_contact_number": "",
+    "accident_state": "",
+    "isMedicationReconciliation": "false",
+    "emp": "false",
+    "currentDate": "",
+    "source": "Clinic referral",
+    "jos": "",
+    "oa": "false",
+    "pos_map_code": "",
+    "ordering_facility_id": "6",
+    "patientRoom": "",
+    "pos": "",
+    "createdby": "Weise, Todd",
+    "dispatch_address": "",
+    "is_rejected": "false",
+    "referring_providerloginID": "0",
+    "isPreOrder": "true",
+    "patient_age": "57",
+    "aa": "false",
+    "stat": "0",
+    "pos_type_code": "",
+    "patientLocation": "",
+    "google_job_id": "0",
+    "isquickappt_from": "facility_login",
+    "transport": "Select",
+    "muDataCaptured": "false",
+    "ordering_facility": "Todd Test Chiropractic",
+    "appontmentReminder": "false",
+    "orderContact": "",
+    "updated_dt": "",
+    "updated_by": "",
+    "patientEmail": "[object Object]",
+    "patientCondition": ""
+  },
+  "orderStatus": "ORD",
+  "orderStatusDesc": "Ordered",
+  "orderStatusLastChangedBy": 22,
+  "orderStatusLastChangedDt": 1589381438617,
+  "orderType": "P",
+  "orderedBy": 22,
+  "orderedDt": 1589381438617,
+  "orderingProviders": [],
+  "patientId": 15,
+  "primaryPatientInsuranceId": 26,
+  "readingProviders": [],
+  "referringProviderIds": [],
+  "referringProviders": []
+}
