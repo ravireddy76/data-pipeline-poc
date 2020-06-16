@@ -35,7 +35,7 @@ spring:
   #Postgres dB configuration.
   datasource:
     platform: postgres
-    url: "jdbc:postgresql://localhost:5432/pocdb"
+    url: "jdbc:postgresql://localhost:5432/DataPipeline"
     username: test
     password: test9988
     driver-class-name: org.postgresql.Driver

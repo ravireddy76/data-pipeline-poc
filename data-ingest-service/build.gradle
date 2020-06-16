@@ -48,12 +48,14 @@ dependencies {
     compileOnly group: 'org.projectlombok', name: 'lombok', version: "${lombokVersion}"
     annotationProcessor group:'org.projectlombok', name:'lombok', version:"${lombokVersion}"
 
+    /** Non maven repo libraries or dependencies.*/
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
     /** Apache libraries. */
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.28'
     compile group: 'net.bull.javamelody', name: 'javamelody-spring-boot-starter', version: '1.77.0'
     compile group: 'com.google.guava', name: 'guava', version: '23.0'
-    compile group: 'com.microsoft.sqlserver', name: 'sqljdbc4', version: '4.0'
 
     /** Spring boot dependencies. */
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'

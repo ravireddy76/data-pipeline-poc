@@ -3,7 +3,7 @@ This is data enrichment service is micro service application to read and validat
 
 ### Getting Started
 To set up, build and run poc application in LOCAL environment.
-1.	Clone or download from github (https://github.com/ravireddy76/docker-compose)
+1.	Clone or download from github (https://github.com/ravireddy76/data-pipeline-poc)
 2.	Open Project enrichment-service in IntelliJ/Eclipse
 3.  For lombok plugin configuration please follow steps https://www.baeldung.com/lombok-ide
 3.	Build ``` ./gradlew clean build ```

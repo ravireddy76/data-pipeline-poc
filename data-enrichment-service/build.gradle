@@ -55,6 +55,8 @@ dependencies {
     compile group: 'net.bull.javamelody', name: 'javamelody-spring-boot-starter', version: '1.77.0'
     compile group: 'com.google.guava', name: 'guava', version: '23.0'
     compile group: 'org.postgresql', name: 'postgresql', version: "${postgresqlVersion}"
+    compile group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.9.10'
+
 
     /** Spring boot dependencies. */
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
