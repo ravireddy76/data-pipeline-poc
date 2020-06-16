@@ -1,5 +1,7 @@
 package com.dp.poc.service;
 
+import com.dp.poc.model.Order;
+import com.dp.poc.repository.OrderRepo;
 import com.dp.poc.util.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,6 +23,9 @@ import java.util.Map;
 public class EventPublisher {
 
     @Autowired
+    private OrderRepo orderRepo;
+
+    @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
     @Value("${topic.name}")
@@ -28,14 +34,18 @@ public class EventPublisher {
     /**
      * Method to publish message into given topic.
      *
-     * @param messageEvent
      * @throws Exception
      */
-    public void publish(Map<String, String> messageEvent) throws Exception {
-        log.info("sending message='{}' to topic='{}'", messageEvent.toString(), topic);
+    public void readAndPublish() throws Exception {
+        /* Read the orders data by querying order table.*/
+        List<Order> searchedOrders = orderRepo.findOrders();
+        log.info("Number of searched orders: {} to topic: {}", searchedOrders.size(), topic);
 
-        /* Translate message object to json message. */
-        String jsonMessage = JsonUtils.serializeJson(messageEvent);
-        kafkaTemplate.send(topic, jsonMessage);
+        /* Publish orders information as a events. */
+        for (Order order : searchedOrders) {
+            /* Translate message object to json message. */
+            String jsonMessage = JsonUtils.serializeJson(order);
+            kafkaTemplate.send(topic, jsonMessage);
+        }
     }
 }

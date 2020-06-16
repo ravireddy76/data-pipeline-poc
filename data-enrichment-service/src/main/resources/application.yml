@@ -56,12 +56,12 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-      group-id: mbr_claims
+      group-id: data_orders
       auto-offset-reset: earliest
 
 # Kafka topic configuration where listening from topic
 topic:
-  name: data-enrichment
+  name: orders
 
 # use a HTTP port 8080
 server:

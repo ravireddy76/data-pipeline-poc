@@ -58,16 +58,15 @@ public class HeartBeatController {
     /**
      * Method to publish event into kafka topic.
      *
-     * @param msgEvent
      * @return ResponseEntity
      */
     @SuppressWarnings("unchecked")
-    @ApiOperation(value = "", notes = "Publishing claim event")
+    @ApiOperation(value = "", notes = "Reading and publishing order data events")
     @RequestMapping(value = "/publish", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity publishEvent(@RequestBody Map<String, String> msgEvent) {
+    public ResponseEntity publishEvent() {
         try {
-            log.info("Publishing message event into kafka topic: {}", msgEvent.toString());
-            eventPublisher.publish(msgEvent);
+            log.info("Reading data and publishing data events into kafka topic");
+            eventPublisher.readAndPublish();
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Issues publishing message into kafka topic: {}", ExceptionUtils.getStackTrace(ex));
