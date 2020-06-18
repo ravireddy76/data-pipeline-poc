@@ -32,11 +32,11 @@ public class Order {
     private String aa;
 
     @Nationalized
-    @Column(name = "appontmentReminder")
+    @Column(name = "appontment_reminder")
     private String appontmentReminder;
 
     @Nationalized
-    @Column(name = "cognitiveStatus")
+    @Column(name = "cognitive_status")
     private String cognitiveStatus;
 
     @Column(name = "company_id")
@@ -47,18 +47,18 @@ public class Order {
     private String cptCodes;
 
     @Nationalized
-    @Column(name = "createdby")
+    @Column(name = "created_by")
     private String createdby;
 
     @Nationalized
-    @Column(name = "currentDate")
+    @Column(name = "curent_date")
     private String currentDate;
 
     @Column(name = "deleted_dt")
     private Timestamp deletedDt;
 
     @Nationalized
-    @Column(name = "dischargeInstructions")
+    @Column(name = "discharge_instructions")
     private String dischargeInstructions;
 
     @Nationalized
@@ -84,7 +84,7 @@ public class Order {
     private int facilityId;
 
     @Nationalized
-    @Column(name = "functionalStatus")
+    @Column(name = "functional_status")
     private String functionalStatus;
 
     @Nationalized
@@ -116,15 +116,15 @@ public class Order {
     private String isRejected;
 
     @Nationalized
-    @Column(name = "isMedicationReconciliation")
+    @Column(name = "isMedication_reconciliation")
     private String isMedicationReconciliation;
 
     @Nationalized
-    @Column(name = "isPreOrder")
+    @Column(name = "is_pre_order")
     private String isPreOrder;
 
     @Nationalized
-    @Column(name = "isquickappt_from")
+    @Column(name = "is_quickappt_from")
     private String isquickapptFrom;
 
     @Nationalized
@@ -132,7 +132,7 @@ public class Order {
     private String jos;
 
     @Nationalized
-    @Column(name = "lastMuUpdatedBy")
+    @Column(name = "last_mu_updated_by")
     private String lastMuUpdatedBy;
 
     @Nationalized
@@ -186,7 +186,7 @@ public class Order {
     private String orderType;
 
     @Nationalized
-    @Column(name = "orderContact")
+    @Column(name = "order_contact")
     private String orderContact;
 
     @Column(name = "ordered_by")
@@ -215,19 +215,19 @@ public class Order {
     private long patientId;
 
     @Nationalized
-    @Column(name = "patientCondition")
+    @Column(name = "patient_condition")
     private String patientCondition;
 
     @Nationalized
-    @Column(name = "patientEmail")
+    @Column(name = "patient_email")
     private String patientEmail;
 
     @Nationalized
-    @Column(name = "patientLocation")
+    @Column(name = "patient_location")
     private String patientLocation;
 
     @Nationalized
-    @Column(name = "patientRoom")
+    @Column(name = "patient_room")
     private String patientRoom;
 
     @Nationalized
@@ -257,7 +257,7 @@ public class Order {
     private String readingProviders;
 
     @Nationalized
-    @Column(name = "referralNo")
+    @Column(name = "referral_no")
     private String referralNo;
 
     @Nationalized
@@ -265,7 +265,7 @@ public class Order {
     private String referringProviderIds;
 
     @Nationalized
-    @Column(name = "referring_providerloginID")
+    @Column(name = "referring_provider_login_id")
     private String referringProviderLoginID;
 
     @Nationalized
@@ -273,7 +273,7 @@ public class Order {
     private String referringProviders;
 
     @Nationalized
-    @Column(name = "requestingDate")
+    @Column(name = "requesting_date")
     private String requestingDate;
 
     @Nationalized
@@ -305,7 +305,7 @@ public class Order {
     private long tertiaryPatientInsuranceId;
 
     @Nationalized
-    @Column(name = "transactionCareIn")
+    @Column(name = "transaction_care_in")
     private String transactionCareIn;
 
     @Nationalized
