@@ -57,7 +57,6 @@ dependencies {
     compile group: 'org.postgresql', name: 'postgresql', version: "${postgresqlVersion}"
     compile group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.9.10'
 
-
     /** Spring boot dependencies. */
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
@@ -72,6 +71,11 @@ dependencies {
     /** Swagger documentation generator*/
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: "${springfoxVersion}"
     compile group: 'io.springfox', name: 'springfox-swagger2', version: "${springfoxVersion}"
+
+
+    /** CDC Debezium dependencies. */
+    compile group: 'io.debezium', name: 'debezium-embedded', version: '1.1.2.Final'
+    compile group: 'io.debezium', name: 'debezium-connector-postgres', version: '1.1.2.Final'
 
     /** Unit and Integration test dependencies.*/
     testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: "${groovyVersion}"

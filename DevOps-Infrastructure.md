@@ -35,3 +35,9 @@ There are many tools available for infrastructure automation. Which tool to be u
 ### Reference
 1. https://docs.microsoft.com/en-us/azure/devops/learn/what-is-devops
 2. https://dzone.com/articles/infrastructure-as-code-a-devops-way-to-manage-it-i
+
+### Kafka Setup
+1. https://phoenixnap.com/kb/kafka-on-kubernetes
+2. https://better-coding.com/building-apache-kafka-cluster-using-docker-compose-and-virtualbox/
+3. https://docs.confluent.io/5.0.0/installation/docker/docs/installation/clustered-deployment.html
+4. https://www.tutorialspoint.com/apache_kafka/apache_kafka_installation_steps.htm
