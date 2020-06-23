@@ -18,7 +18,7 @@ The total footprint is 5 Nodes, 20 CPUs, 60 GiB memory, 1250 GiB disk.
 - [x] Each server will consume 1 Persistent Volume with 10 GiB of storage.
 - [x] You can tune this infrastructure setup to your specific needs.
 ```
-<font color="red">The total footprint is 3 Nodes, 1.5 CPUs, 3 GiB memory, 30 GiB disk.</font>
+The total footprint is 3 Nodes, 1.5 CPUs, 3 GiB memory, 30 GiB disk.
 ```
 
 ### Local Development, Demos Readiness
