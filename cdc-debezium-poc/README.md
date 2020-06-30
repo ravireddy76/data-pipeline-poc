@@ -1,5 +1,5 @@
 ### Introduction
-This is data enrichment service is micro service application to read and validate/format the data.
+This is cdc(change data capture) is micro service application using debezium logical decoding plugin in postgres.
 
 ### Getting Started
 To set up, build and run poc application in LOCAL environment.
