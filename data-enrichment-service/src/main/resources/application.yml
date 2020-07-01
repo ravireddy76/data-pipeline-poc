@@ -61,7 +61,8 @@ spring:
 
 # Kafka topic configuration where listening from topic
 topic:
-  name: orders
+  order: orders
+  cdc: cdcdata
 
 # use a HTTP port 8080
 server:

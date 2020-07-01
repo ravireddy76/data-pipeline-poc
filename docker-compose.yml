@@ -3,25 +3,16 @@ services:
 
   # PostgreSQL image
   db:
-    image: "postgres"
-    container_name: "Local-Postgres"
+    image: "debezium/postgres:latest"
+    container_name: "Local-Debezium-Postgres"
     environment:
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test9988
-      - POSTGRES_DB=pocdb
+      - POSTGRES_DB=datapipeline
     ports:
       - "5432:5432"
     volumes:
       - /docker-tmp/postgres/data:/var/lib/postgresql/data
-
-  # MongoDB image
-  mongodb:
-    image: mongo:latest
-    container_name: "Local-MongoDB"
-    ports:
-      - "27017:27017"
-    volumes:
-      - ./data/db:/data/db
 
   # Kafka and Zookeeper image
   zookeeper:

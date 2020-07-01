@@ -3,7 +3,9 @@ package com.dp.poc.service;
 import com.dp.poc.model.Order;
 import com.dp.poc.repository.OrderRepo;
 import com.dp.poc.util.JsonUtils;
+import com.dp.poc.util.Operation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -28,8 +30,11 @@ public class EventPublisher {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @Value("${topic.name}")
-    private String topic;
+    @Value("${topic.order}")
+    private String orderTopic;
+
+    @Value("${topic.cdc}")
+    private String cdcTopic;
 
     /**
      * Method to publish message into given topic.
@@ -39,13 +44,32 @@ public class EventPublisher {
     public void readAndPublish() throws Exception {
         /* Read the orders data by querying order table.*/
         List<Order> searchedOrders = orderRepo.findOrders();
-        log.info("Number of searched orders: {} to topic: {}", searchedOrders.size(), topic);
+        log.info("Number of searched orders: {} to topic: {}", searchedOrders.size(), orderTopic);
 
         /* Publish orders information as a events. */
         for (Order order : searchedOrders) {
             /* Translate message object to json message. */
             String jsonMessage = JsonUtils.serializeJson(order);
-            kafkaTemplate.send(topic, jsonMessage);
+            kafkaTemplate.send(orderTopic, jsonMessage);
         }
     }
+
+    /**
+     * Method to publish cdc events.
+     *
+     * @param changeData
+     * @param operation
+     */
+    public void cdcPublish(Map<String, Object> changeData, Operation operation) {
+        log.info("Operation: {}, Change Data: {}", operation.name(), changeData);
+        try {
+            /* Translate message object to json message. */
+            changeData.put("operationType", operation.name());
+            String jsonMessage = JsonUtils.serializeJson(changeData);
+            kafkaTemplate.send(cdcTopic, jsonMessage);
+        } catch (Exception ex) {
+            log.error("Exception publishing message to topic :{}", ExceptionUtils.getStackTrace(ex));
+        }
+    }
+
 }
