@@ -1,0 +1,95 @@
+project:
+  artifactId: rules-meaningfule-mgt-ingest
+  name: rules-meaningfule-mgt-ingest
+  version: 1.0.0
+  description: Rules Meaningfule mgt Ingest Service is a micro service to ingest the rules and meaningfule related data into the destination DB.
+
+
+# Exposing all the actuator end points (Spring 2.0) #
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          '*'
+
+  # Exposing the restart & shutdown endpoint
+  endpoint:
+    restart:
+      enabled: true
+    shutdown:
+      enabled: true
+
+# For Spring Actuator /info endpoint
+info:
+  artifact: ${project.artifactId}
+  name: ${project.name}
+  description: ${project.description}
+  version: ${project.version}
+
+# Spring
+spring:
+  application:
+    name: rules-meaningfule-mgt-ingest
+
+  #MS SQL dB configuration.
+  datasource:
+    url: "jdbc:sqlserver://DC1-DEV-LDWDB-1.ad.cdirad.com;databaseName=Rep_Pacs_Live"
+    username: kafkauser
+    password: 6p9jawbYEVsD5WnS
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  #JPA Configuration
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update # When you launch the application for the first time - switch "none" at "create"
+      show-sql: true
+      database-platform: org.hibernate.dialect.SQLServer2012Dialect
+      naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+        format_sql: true
+
+  # Kafka Configuration
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: data_orders
+      auto-offset-reset: latest
+
+# Kafka topic configuration where listening from topic
+topic:
+  orderT: orders
+  t_application_entities: application_entities
+  t_audit_log: audit_log
+  t_file_stores: file_stores
+  t_pp_patients: pp_patients
+  t_routing_rules: routing_rules
+  t_users: users
+  t_user_roles: user_roles
+  t_user_groups: user_groups
+
+# use a HTTP port 8080
+server:
+  port: 8085
+
+
+---
+spring:
+  profiles: stage
+
+server:
+  port: 8080
+
+
+---
+spring:
+  profiles: prod
+
+server:
+  port: 8080
+
+
+

@@ -1,0 +1,134 @@
+project:
+  artifactId: scheduling-office-ingest
+  name: scheduling-office-ingest
+  version: 1.0.0
+  description: Scheduling office data ingest service is a micro service to ingest the scheduling and office related data into the destination DB.
+
+
+# Exposing all the actuator end points (Spring 2.0) #
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          '*'
+
+  # Exposing the restart & shutdown endpoint
+  endpoint:
+    restart:
+      enabled: true
+    shutdown:
+      enabled: true
+
+# For Spring Actuator /info endpoint
+info:
+  artifact: ${project.artifactId}
+  name: ${project.name}
+  description: ${project.description}
+  version: ${project.version}
+
+# Spring
+spring:
+  application:
+    name: scheduling-office-ingest
+
+  #MS SQL dB configuration.
+  # Datasource Destination 1
+  dsa:
+    url: "jdbc:sqlserver://DC2-TST-LDWDB-1.ad.cdirad.com:1433;databaseName=Rep_Pacs_Live"
+    username: kafkauser
+    password: 6p9jawbYEVsD5WnS
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  # DataSource Destination2
+  dsb:
+    url: "jdbc:sqlserver://DC2-TST-LDWDB-1.ad.cdirad.com:1433;databaseName=Rep_Pacs_Live_Destination2"
+    username: kafkauser
+    password: 6p9jawbYEVsD5WnS
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+
+  #JPA Configuration
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update # When you launch the application for the first time - switch "none" at "create"
+      show-sql: true
+      database-platform: org.hibernate.dialect.SQLServer2012Dialect
+      naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+        format_sql: true
+
+  # Kafka Configuration
+  kafka:
+    bootstrap-servers: DC1-T-KAFKA1.ad.cdirad.com:9092
+    consumer:
+      group-id: data_orders
+      auto-offset-reset: latest
+
+# Kafka topic configuration where listening from topic
+topic:
+  orderT: orders
+  t_alerts: alerts
+  t_appointment_types: appointment_types
+  t_body_parts: body_parts
+  t_call_categories: call_categories
+  t_companies: companies
+  t_cpt_codes: cpt_codes
+  t_critical_findings: critical_findings
+  t_facilities: facilities
+  t_fee_schedule: fee_schedules
+  t_fee_schedule_cpts: fee_schedule_cpts
+  t_icd_codes: icd_codes
+  t_insurance_authorizations: insurance_authorizations
+  t_hie_consents: hie_consents
+  t_modalities: modalities
+  t_modality_rooms: modality_rooms
+  t_monthly_goals: monthly_goals
+  t_marketing_rep_tasks: marketing_rep_tasks
+  t_news: news
+  t_patient_access_reasons: patient_access_reasons
+  t_providers: providers
+  t_provider_schedule_templates: provider_schedule_templates
+  t_provider_alt_names: provider_alt_names
+  t_provider_contacts: provider_contacts
+  t_provider_groups: provider_groups
+  t_provider_contact_notifications: provider_contact_notifications
+  t_provider_schedule_types: provider_schedule_types
+  t_peer_review_facilities: peer_review_facilities
+  t_peer_review_cpt_codes: peer_review_cpt_codes
+  t_peer_review_study_descriptions: peer_review_study_descriptions
+  t_peer_review_appointment_types: peer_review_appointment_types
+  t_schedule_templates: schedule_templates
+  t_schedule_blocks: schedule_blocks
+  t_schedule_filters: schedule_filters
+  t_study_status: study_status
+  t_study_flags: study_flags
+  t_tasks: tasks
+  t_transcription_user_templates: transcription_user_templates
+  t_transcription_templates: transcription_templates
+
+# use a HTTP port 8080
+server:
+  port: 8086
+
+
+---
+spring:
+  profiles: stage
+
+server:
+  port: 8080
+
+
+---
+spring:
+  profiles: prod
+
+server:
+  port: 8080
+
+
+
